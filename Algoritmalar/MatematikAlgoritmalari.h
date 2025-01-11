@@ -5,7 +5,8 @@ class MatematikAlgoritmalari
 {
 public:
     MatematikAlgoritmalari();
-    int PascalTriangleRowSum(int row);
+    static int PascalTriangleRowSum(const int row);
+    static int MostFreqMember(const int arr[], int size);
 };
 
 #endif // MATEMATIKALGORITMALARI_H

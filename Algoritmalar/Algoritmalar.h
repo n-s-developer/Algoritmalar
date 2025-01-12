@@ -12,6 +12,7 @@ public:
     static std::string MinWindowSubstring(std::string strArr[], int size);
     static std::string FindIntersection(std::string strArr[], int arrLength);
     static std::string CodelandUsernameValidation(std::string str);
+    static std::string QuestionsMarks(std::string str);
 };
 
 #endif // ALGORITMALAR_H

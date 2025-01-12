@@ -18,6 +18,7 @@ int main()
         std::cout << "3: MinWindowSubstring" << std::endl;
         std::cout << "4: FindIntersection" << std::endl;
         std::cout << "5: CodelandUsernameValidation" << std::endl;
+        std::cout << "6: QuestionsMarks" << std::endl;
 
         std::cin >> selection;
 
@@ -108,6 +109,21 @@ void SelectCase(int selection)
             str = {"nur"};
             std::cout << "str: " << str << std::endl;
             std::cout << Algoritmalar::CodelandUsernameValidation(str) << std::endl;
+            break;
+        }
+        case 6:
+        {
+            std::string str = { "aa6?9" };
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::QuestionsMarks(str) << std::endl;
+
+            str = {"arrb6???4xxbl5???eee5"};
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::QuestionsMarks(str) << std::endl;
+
+            str = { "acc?7??sss?3rr1??????5" };
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::QuestionsMarks(str) << std::endl;
             break;
         }
     }

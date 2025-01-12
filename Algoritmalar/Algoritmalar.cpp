@@ -7,6 +7,7 @@
 #include <iostream>
 #include <climits>
 #include <algorithm>
+#include <cctype>
 
 Algoritmalar::Algoritmalar() {}
 
@@ -152,7 +153,6 @@ std::string Algoritmalar::FindIntersection(std::string strArr[], int arrLength)
     return result;
 }
 
-
 std::string Algoritmalar::CodelandUsernameValidation(std::string str)
 {
     size_t size = str.size();
@@ -178,6 +178,66 @@ std::string Algoritmalar::CodelandUsernameValidation(std::string str)
                 return "false";
             }
         }
+    }
+
+    return "true";
+}
+
+std::string Algoritmalar::QuestionsMarks(std::string str)
+{
+    bool isDigitFlag = false;
+    bool isThereAnyAddTo10 = false;
+    std::string temp = {""};
+
+    int first = 0;
+    int second = 0;
+    int QuestionMarkCount = 0;
+
+    for (size_t i = 0; i < str.size(); i++)
+    {
+        if ( (isdigit(str.at(i))) &&
+            (isDigitFlag == false) )
+        {
+            first = str[i] - '0'; // Convert Number
+            isDigitFlag = true;
+        }
+        else if ( (isdigit(str.at(i))) &&
+                 (isDigitFlag == true))
+        {
+            second = str[i] - '0'; // Convert Number
+
+            if (first + second == 10)
+            {
+                for (auto ch : temp)
+                {
+                    if (ch == '?')
+                    {
+                        QuestionMarkCount++;
+                    }
+                }
+
+                if (QuestionMarkCount != 3)
+                {
+                    return "false";
+                }
+
+                isThereAnyAddTo10 = true;
+            }
+
+            first = std::stoi(std::to_string(str.at(i)));
+            second = 0;
+            temp = "";
+            QuestionMarkCount = 0;
+        }
+        else if (isDigitFlag == true)
+        {
+            temp += str.at(i);
+        }
+    }
+
+    if (isThereAnyAddTo10 == false)
+    {
+        return "false";
     }
 
     return "true";

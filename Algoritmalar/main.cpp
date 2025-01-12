@@ -19,6 +19,8 @@ int main()
         std::cout << "4: FindIntersection" << std::endl;
         std::cout << "5: CodelandUsernameValidation" << std::endl;
         std::cout << "6: QuestionsMarks" << std::endl;
+        std::cout << "7: FirstReverse" << std::endl;
+
 
         std::cin >> selection;
 
@@ -124,6 +126,21 @@ void SelectCase(int selection)
             str = { "acc?7??sss?3rr1??????5" };
             std::cout << "str: " << str << std::endl;
             std::cout << Algoritmalar::QuestionsMarks(str) << std::endl;
+            break;
+        }
+        case 7:
+        {
+            std::string str = { "coderbyte" };
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::FirstReverse(str) << std::endl;
+
+            str = {"I Love Code"};
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::FirstReverse(str) << std::endl;
+
+            str = { "Hello World and Coders" };
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::FirstReverse(str) << std::endl;
             break;
         }
     }

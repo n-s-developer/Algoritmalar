@@ -242,3 +242,9 @@ std::string Algoritmalar::QuestionsMarks(std::string str)
 
     return "true";
 }
+
+std::string Algoritmalar::FirstReverse(std::string str)
+{
+    std::reverse(str.begin(), str.end());
+    return str;
+}

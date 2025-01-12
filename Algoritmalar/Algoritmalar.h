@@ -13,6 +13,7 @@ public:
     static std::string FindIntersection(std::string strArr[], int arrLength);
     static std::string CodelandUsernameValidation(std::string str);
     static std::string QuestionsMarks(std::string str);
+    static std::string FirstReverse(std::string str);
 };
 
 #endif // ALGORITMALAR_H

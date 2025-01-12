@@ -20,7 +20,7 @@ int main()
         std::cout << "5: CodelandUsernameValidation" << std::endl;
         std::cout << "6: QuestionsMarks" << std::endl;
         std::cout << "7: FirstReverse" << std::endl;
-
+        std::cout << "8: FirstFactorial" << std::endl;
 
         std::cin >> selection;
 
@@ -141,6 +141,21 @@ void SelectCase(int selection)
             str = { "Hello World and Coders" };
             std::cout << "str: " << str << std::endl;
             std::cout << Algoritmalar::FirstReverse(str) << std::endl;
+            break;
+        }
+        case 8:
+        {
+            int num = 18;
+            std::cout << "num: " << num << std::endl;
+            std::cout << Algoritmalar::FirstFactorial(num) << std::endl;
+
+            num = 1;
+            std::cout << "num: " << num << std::endl;
+            std::cout << Algoritmalar::FirstFactorial(num) << std::endl;
+
+            num = 5;
+            std::cout << "num: " << num << std::endl;
+            std::cout << Algoritmalar::FirstFactorial(num) << std::endl;
             break;
         }
     }

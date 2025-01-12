@@ -248,3 +248,15 @@ std::string Algoritmalar::FirstReverse(std::string str)
     std::reverse(str.begin(), str.end());
     return str;
 }
+
+unsigned long long Algoritmalar::FirstFactorial(int num)
+{
+    unsigned long long result = 1;
+
+    for (int i = num; i > 0; i--)
+    {
+        result *= i;
+    }
+
+    return result;
+}

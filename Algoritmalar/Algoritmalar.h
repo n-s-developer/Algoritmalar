@@ -14,6 +14,7 @@ public:
     static std::string CodelandUsernameValidation(std::string str);
     static std::string QuestionsMarks(std::string str);
     static std::string FirstReverse(std::string str);
+    static unsigned long long FirstFactorial(int num);
 };
 
 #endif // ALGORITMALAR_H

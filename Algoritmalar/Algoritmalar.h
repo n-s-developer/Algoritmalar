@@ -1,17 +1,17 @@
-#ifndef MATEMATIKALGORITMALARI_H
-#define MATEMATIKALGORITMALARI_H
+#ifndef ALGORITMALAR_H
+#define ALGORITMALAR_H
 
 #include <string>
 
-class MatematikAlgoritmalari
+class Algoritmalar
 {
 public:
-    MatematikAlgoritmalari();
+    Algoritmalar();
     static int PascalTriangleRowSum(const int row);
     static int MostFreqMember(const int arr[], int size);
     static std::string MinWindowSubstring(std::string strArr[], int size);
     static std::string FindIntersection(std::string strArr[], int arrLength);
-
+    static std::string CodelandUsernameValidation(std::string str);
 };
 
-#endif // MATEMATIKALGORITMALARI_H
+#endif // ALGORITMALAR_H

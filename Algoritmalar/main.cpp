@@ -1,4 +1,4 @@
-#include "MatematikAlgoritmalari.h"
+#include "Algoritmalar.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,6 +17,7 @@ int main()
         std::cout << "2: MostFreqMember" << std::endl;
         std::cout << "3: MinWindowSubstring" << std::endl;
         std::cout << "4: FindIntersection" << std::endl;
+        std::cout << "5: CodelandUsernameValidation" << std::endl;
 
         std::cin >> selection;
 
@@ -43,7 +44,7 @@ void SelectCase(int selection)
             std::cout << "First Row is 0 \nEnter Row Number: ";
             std::cin >> row;
 
-            std::cout << "Result: " << MatematikAlgoritmalari::PascalTriangleRowSum(row) << std::endl;
+            std::cout << "Result: " << Algoritmalar::PascalTriangleRowSum(row) << std::endl;
             break;
         }
         case 2:
@@ -68,19 +69,22 @@ void SelectCase(int selection)
                 arr[i] = temp[i];
             }
 
-            std::cout << "Result: " << MatematikAlgoritmalari::MostFreqMember(arr, size)<< std::endl;
+            std::cout << "Result: " << Algoritmalar::MostFreqMember(arr, size)<< std::endl;
 
             break;
         }
         case 3:
         {
+            /*
+             * {"ahffaksfajeeubsne", "jefaa"}, {"aaffhkksemckelloe", "fhea"}
+            */
             std::string strArr[2];
             std::cout << "Enter first string: ";
             std::cin >> strArr[0];
             std::cout << "Enter second string: ";
             std::cin >> strArr[1];
 
-            std::cout << "Result: " << MatematikAlgoritmalari::MinWindowSubstring(strArr, 2)<< std::endl;
+            std::cout << "Result: " << Algoritmalar::MinWindowSubstring(strArr, 2)<< std::endl;
 
             break;
         }
@@ -88,7 +92,22 @@ void SelectCase(int selection)
         {
             std::string strArr[2]={"1, 3, 4, 7, 13", "1, 2, 4, 13, 15"};
 
-            std::cout << "Result: " << MatematikAlgoritmalari::FindIntersection(strArr, 2)<< std::endl;
+            std::cout << "Result: " << Algoritmalar::FindIntersection(strArr, 2)<< std::endl;
+            break;
+        }
+        case 5:
+        {
+            std::string str = {"deneme213_denemese'"};
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::CodelandUsernameValidation(str) << std::endl;
+
+            str = {"_deneme213_denemese"};
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::CodelandUsernameValidation(str) << std::endl;
+
+            str = {"nur"};
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::CodelandUsernameValidation(str) << std::endl;
             break;
         }
     }

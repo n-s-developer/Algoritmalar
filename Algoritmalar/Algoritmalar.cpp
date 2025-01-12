@@ -1,4 +1,4 @@
-#include "MatematikAlgoritmalari.h"
+#include "Algoritmalar.h"
 #include <cmath>
 #include <map>
 #include <unordered_map>
@@ -6,17 +6,18 @@
 #include <vector>
 #include <iostream>
 #include <climits>
+#include <algorithm>
 
-MatematikAlgoritmalari::MatematikAlgoritmalari() {}
+Algoritmalar::Algoritmalar() {}
 
-int MatematikAlgoritmalari::PascalTriangleRowSum(int row)
+int Algoritmalar::PascalTriangleRowSum(int row)
 {
     int sum = pow(2, row);
 
     return sum;
 }
 
-int MatematikAlgoritmalari::MostFreqMember(const int arr[], int size)
+int Algoritmalar::MostFreqMember(const int arr[], int size)
 {
     std::map <int, int> tempArr;
 
@@ -39,18 +40,16 @@ int MatematikAlgoritmalari::MostFreqMember(const int arr[], int size)
     return maxFreqMember;
 }
 
-std::string MatematikAlgoritmalari::MinWindowSubstring(std::string strArr[], int size)
+std::string Algoritmalar::MinWindowSubstring(std::string strArr[], int size)
 {
-    std::string N = strArr[0];  // String N
-    std::string K = strArr[1];  // String K (characters to find)
+    std::string N = strArr[0];
+    std::string K = strArr[1];
 
-    // Step 1: Count characters in K
     std::unordered_map<char, int> targetCount;
     for (char ch : K) {
         targetCount[ch]++;
     }
 
-    // Step 2: Initialize sliding window variables
     int left = 0, right = 0;
     int minLength = INT_MAX;
     int minLeft = 0;
@@ -59,17 +58,14 @@ std::string MatematikAlgoritmalari::MinWindowSubstring(std::string strArr[], int
     int matchedChars = 0;
 
     while (right < N.size()) {
-        // Expand the window by including N[right]
         char rightChar = N[right];
         windowCount[rightChar]++;
 
-        // If the current window contains enough of rightChar
         if (targetCount.find(rightChar) != targetCount.end() &&
             windowCount[rightChar] == targetCount[rightChar]) {
             matchedChars++;
         }
 
-        // Try to shrink the window if it contains all characters of K
         while (left <= right && matchedChars == requiredChars) {
             int windowLength = right - left + 1;
             if (windowLength < minLength) {
@@ -77,7 +73,6 @@ std::string MatematikAlgoritmalari::MinWindowSubstring(std::string strArr[], int
                 minLeft = left;
             }
 
-            // Shrink the window from the left
             char leftChar = N[left];
             windowCount[leftChar]--;
             if (targetCount.find(leftChar) != targetCount.end() &&
@@ -87,14 +82,13 @@ std::string MatematikAlgoritmalari::MinWindowSubstring(std::string strArr[], int
             left++;
         }
 
-        // Expand the window
         right++;
     }
 
     return minLength == INT_MAX ? "" : N.substr(minLeft, minLength);
 }
 
-std::string MatematikAlgoritmalari::FindIntersection(std::string strArr[], int arrLength)
+std::string Algoritmalar::FindIntersection(std::string strArr[], int arrLength)
 {
     std::vector <int> vec1;
     std::vector <int> vec2;
@@ -131,8 +125,9 @@ std::string MatematikAlgoritmalari::FindIntersection(std::string strArr[], int a
     vec2.push_back( std::stoi(temp) );
 
     std::set <int> setArr;
-    for (auto x : vec1) {
-        if (std::find(vec2.begin(), vec2.end(), x) != vec2.end()) {
+    for (auto x : vec1)
+    {
+        if (std::find(vec2.begin(), vec2.end(), x ) != vec2.end()) {
             setArr.insert(x);
         }
     }
@@ -155,4 +150,35 @@ std::string MatematikAlgoritmalari::FindIntersection(std::string strArr[], int a
     }
 
     return result;
+}
+
+
+std::string Algoritmalar::CodelandUsernameValidation(std::string str)
+{
+    size_t size = str.size();
+
+    if (size < 4 || size > 25)
+    {
+        return "false";
+    }
+    else if (!isalpha(str.at(0) ) )
+    {
+        return "false";
+    }
+    else if (str.at( str.size() - 1 ) == '_')
+    {
+        return "false";
+    }
+    else
+    {
+        for (auto ch : str)
+        {
+            if ( !isalnum(ch) && ch != '_')
+            {
+                return "false";
+            }
+        }
+    }
+
+    return "true";
 }

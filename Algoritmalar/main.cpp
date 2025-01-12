@@ -21,6 +21,7 @@ int main()
         std::cout << "6: QuestionsMarks" << std::endl;
         std::cout << "7: FirstReverse" << std::endl;
         std::cout << "8: FirstFactorial" << std::endl;
+        std::cout << "9: LongestWord" << std::endl;
 
         std::cin >> selection;
 
@@ -156,6 +157,17 @@ void SelectCase(int selection)
             num = 5;
             std::cout << "num: " << num << std::endl;
             std::cout << Algoritmalar::FirstFactorial(num) << std::endl;
+            break;
+        }
+        case 9:
+        {
+            std::string str = "fun&!! time";
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::LongestWord(str) <<std::endl;
+
+            str = "I love dogs";
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::LongestWord(str) << std::endl;
             break;
         }
     }

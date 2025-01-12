@@ -260,3 +260,38 @@ unsigned long long Algoritmalar::FirstFactorial(int num)
 
     return result;
 }
+
+std::string Algoritmalar::LongestWord(std::string sen)
+{
+    std::string temp = "";
+    std::vector <std::string> vecStr;
+
+    for (auto ch : sen)
+    {
+        if (ch == ' ')
+        {
+            vecStr.push_back(temp);
+            temp = "";
+        }
+        else if (!ispunct(ch))
+        {
+            temp += ch;
+        }
+    }
+    vecStr.push_back(temp); // insert last value
+
+
+    int maxSize = 0;
+    std::string maxSizeWord = "";
+
+    for (auto str : vecStr)
+    {
+        if (str.size() > maxSize)
+        {
+            maxSize = str.size();
+            maxSizeWord = str;
+        }
+    }
+
+    return maxSizeWord;
+}

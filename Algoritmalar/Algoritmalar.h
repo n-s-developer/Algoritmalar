@@ -15,6 +15,7 @@ public:
     static std::string QuestionsMarks(std::string str);
     static std::string FirstReverse(std::string str);
     static unsigned long long FirstFactorial(int num);
+    static std::string LongestWord(std::string sen);
 };
 
 #endif // ALGORITMALAR_H

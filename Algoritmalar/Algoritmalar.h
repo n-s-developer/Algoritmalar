@@ -16,6 +16,7 @@ public:
     static std::string FirstReverse(std::string str);
     static unsigned long long FirstFactorial(int num);
     static std::string LongestWord(std::string sen);
+    static std::string BracketMatcher(std::string str);
 };
 
 #endif // ALGORITMALAR_H

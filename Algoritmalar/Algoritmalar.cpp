@@ -295,3 +295,29 @@ std::string Algoritmalar::LongestWord(std::string sen)
 
     return maxSizeWord;
 }
+
+std::string Algoritmalar::BracketMatcher(std::string str)
+{
+    int count = 0;
+
+    for (auto ch : str)
+    {
+        if (ch == '(')
+        {
+            count++;
+        }
+        else if (ch == ')')
+        {
+            count--;
+        }
+    }
+
+    if (count == 0)
+    {
+        return "1";
+    }
+    else
+    {
+        return "0";
+    }
+}

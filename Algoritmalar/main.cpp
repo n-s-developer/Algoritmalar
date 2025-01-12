@@ -22,6 +22,7 @@ int main()
         std::cout << "7: FirstReverse" << std::endl;
         std::cout << "8: FirstFactorial" << std::endl;
         std::cout << "9: LongestWord" << std::endl;
+        std::cout << "10: BracketMatcher" << std::endl;
 
         std::cin >> selection;
 
@@ -168,6 +169,17 @@ void SelectCase(int selection)
             str = "I love dogs";
             std::cout << "str: " << str << std::endl;
             std::cout << Algoritmalar::LongestWord(str) << std::endl;
+            break;
+        }
+        case 10:
+        {
+            std::string str = "(coder)(byte))";
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::BracketMatcher(str) <<std::endl;
+
+            str = "(c(oder)) b(yte)";
+            std::cout << "str: " << str << std::endl;
+            std::cout << Algoritmalar::BracketMatcher(str) << std::endl;
             break;
         }
     }

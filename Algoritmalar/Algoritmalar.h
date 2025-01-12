@@ -17,6 +17,7 @@ public:
     static unsigned long long FirstFactorial(int num);
     static std::string LongestWord(std::string sen);
     static std::string BracketMatcher(std::string str);
+    static std::string TreeConstructor(std::string strArr[], int arrLength);
 };
 
 #endif // ALGORITMALAR_H

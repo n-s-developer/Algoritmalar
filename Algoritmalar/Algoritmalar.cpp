@@ -321,3 +321,64 @@ std::string Algoritmalar::BracketMatcher(std::string str)
         return "0";
     }
 }
+
+std::string Algoritmalar::TreeConstructor(std::string strArr[], int arrLength)
+{
+    std::unordered_map<int, int> childParentMap;
+    std::unordered_map<int, int> parentCountMap;
+    std::unordered_map<int, int> childCountMap;
+
+    for (int i = 0; i < arrLength; i++)
+    {
+        int first = 0, second = 0;
+        bool FirstFlag = false, SecondFlag = false;
+
+        for (auto ch : strArr[i])
+        {
+            if (ch == '(')
+            {
+                FirstFlag = true;
+            }
+            else if (FirstFlag)
+            {
+                first = ch - '0';
+                FirstFlag = false;
+            }
+            else if (ch == ',')
+            {
+                SecondFlag = true;
+            }
+            else if (SecondFlag)
+            {
+                second = ch - '0';
+                SecondFlag = false;
+            }
+        }
+
+        if (childParentMap.find(first) != childParentMap.end())
+        {
+            return "false";
+        }
+        childParentMap[first] = second;
+        parentCountMap[second]++;
+        childCountMap[first]++;
+    }
+
+    for (const auto& entry : childCountMap)
+    {
+        if (entry.second > 1)
+        {
+            return "false";
+        }
+    }
+
+    for (const auto& entry : parentCountMap)
+    {
+        if (entry.second > 2)
+        {
+            return "false";
+        }
+    }
+
+    return "true";
+}

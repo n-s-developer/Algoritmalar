@@ -23,6 +23,7 @@ int main()
         std::cout << "8: FirstFactorial" << std::endl;
         std::cout << "9: LongestWord" << std::endl;
         std::cout << "10: BracketMatcher" << std::endl;
+        std::cout << "11: TreeConstructor" << std::endl;
 
         std::cin >> selection;
 
@@ -180,6 +181,15 @@ void SelectCase(int selection)
             str = "(c(oder)) b(yte)";
             std::cout << "str: " << str << std::endl;
             std::cout << Algoritmalar::BracketMatcher(str) << std::endl;
+            break;
+        }
+        case 11:
+        {
+            std::string str[] = {"(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"};
+            std::cout << Algoritmalar::TreeConstructor(str, 5) <<std::endl;
+
+            std::string str2[] = { "(1,2)", "(3,2)", "(2,12)", "(5,2)" };
+            std::cout << Algoritmalar::TreeConstructor(str2, 4) << std::endl;
             break;
         }
     }

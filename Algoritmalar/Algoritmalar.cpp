@@ -224,7 +224,7 @@ std::string Algoritmalar::QuestionsMarks(std::string str)
                 isThereAnyAddTo10 = true;
             }
 
-            first = std::stoi(std::to_string(str.at(i)));
+            first = second; // Convert Number
             second = 0;
             temp = "";
             QuestionMarkCount = 0;
